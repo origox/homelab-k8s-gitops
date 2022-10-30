@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - sources
   - sealed-secret
+  - mongodb
