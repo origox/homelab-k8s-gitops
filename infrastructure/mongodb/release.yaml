@@ -19,8 +19,7 @@ spec:
     global:
       namespaceOverride: mongodb
     persistence:
-      enabled: true
-      existingClaim: longhorn-mongodb-pvc
+      enabled: false
     livenessProbe:
       initialDelaySeconds: 180
     auth:
