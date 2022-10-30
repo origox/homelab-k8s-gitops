@@ -4,6 +4,6 @@ kind: Kustomization
 namespace: mongodb
 resources:
   - namespace.yaml
-  - release.yaml
   - service.yaml
   - basic-auth-sealed.yaml
+  - release.yaml
