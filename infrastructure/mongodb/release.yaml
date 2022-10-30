@@ -23,7 +23,7 @@ spec:
     livenessProbe:
       initialDelaySeconds: 180
     auth:
-      existingSecret: mongodb-secrets
+      existingSecret: basic-auth
     service:
       type: ClusterIP 
 
