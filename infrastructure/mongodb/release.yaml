@@ -1,0 +1,30 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mongodb
+  namespace: mongodb
+spec:
+  chart:
+    spec:
+      chart: mongodb
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: mongodb
+      version: 13.3.0
+  interval: 1m0s
+  values:
+    global:
+      namespaceOverride: mongodb
+    persistence:
+      enabled: true
+      existingClaim: longhorn-mongodb-pvc
+    livenessProbe:
+      initialDelaySeconds: 180
+    auth:
+      existingSecret: mongodb-secrets
+    service:
+      type: ClusterIP 
+

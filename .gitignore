@@ -1,0 +1,8 @@
+# Editors
+.vscode/
+
+# Unencrypted secrets
+basic-auth.yaml
+
+# not really neccessary
+pub-sealed-secrets.pem 
