@@ -3,7 +3,7 @@ kind: SealedSecret
 metadata:
   creationTimestamp: null
   name: basic-auth
-  namespace: mongodb
+  namespace: flux-system
 spec:
   encryptedData:
     database: AgBK0tGmbey41x/ZnXl6h3XnrJUGT+EgDOj+uqIgNEldfYzK0fz2zZAacI8h+PMx/dWZrwdqqEfNKwlLLXt1JNypeHrHTt/RF0qrFWYk5TZ0Ch+atE8T7mxEgPI9LcUlM0tvYQusDM19Ajmiydd9241Zvj573kUZ01syHwNjoDF8zw6iuYDqR20FQ2rbWw7Z7oqmlT/vLJ+YbVrgdkAhtKT3rk+P0QN/FYwpytucVPzeQ2PTvEejGRq4A0KHp6QzI/EEjBCRxTlQ2NNK357aYSyAKpdfFualUpaioJVxPyb0ks9kUKRQMsfB/Jsrq0uhWoNQ+kJDe1sQ533OpINSTyBbs0xvhx2V/zs86dlmDtRKRBInOrZYzJPuIHOmVc7mLll1RBA5zc5CnwjfJNcMy/fWtZmoSdZAChfoRhuL2Y5RroIu9OfKx7ObI813nAEHD++3VJ8T++X9MTCLsvQs2Vb4r4o6jmc9u70g22RuctpR07tTmBWBXfu6aa9NaU3sHRgRCthX7Nxa3OEv8u8eFhF90drhe2PYiHBzyDkYY00pWDGnPwF4EpqEQVlZ2B7muJHBy2m7JLS/vMNwMEM2ainQbFKY/c3gCaljMa9dQme8K0JYXUFKhFqBUiaizCDGoeLRTzp0UtCmcSIc6fxlrKZ6MZmG7+n0VY4yZ1ctmlUD/EWyyzK5VXTXfIuet7dc2jdLpNQs
@@ -14,4 +14,4 @@ spec:
     metadata:
       creationTimestamp: null
       name: basic-auth
-      namespace: mongodb
+      namespace: flux-system
