@@ -17,8 +17,17 @@ Proxmox VM
 Single K3S Master node, no agent nodes
 
 ```bash
-$ curl -sfL https://get.k3s.io | sh -
+k3s-master$ curl -sfL https://get.k3s.io | sh -
 ```
+
+Install prerequisites on host
+```bash
+$ sudo apt install gnupg # try out age...
+$ wget https://github.com/mozilla/sops/releases/download/v3.7.3/sops_3.7.3_amd64.deb
+$ sudo dpkg -i ./sops_XYZ.deb
+
+```
+
 ## Staging - Cluster Infrastructure
 
 ## Staging - Cluster APPs
