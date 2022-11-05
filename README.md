@@ -2,8 +2,8 @@
 
 - K3S Cluster
 - Longhorn Block Storage
-- Flux for GitOps
-- SOPS for Secrets 
+- [Flux for GitOps](https://fluxcd.io/)
+- [SOPS for Secrets](https://fluxcd.io/flux/guides/mozilla-sops/) 
 
 # Staging Environment
 ## Staging - HW
