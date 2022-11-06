@@ -24,7 +24,6 @@ spec:
       initialDelaySeconds: 180
     auth:
       existingSecret: basic-auth
-      database: mydb
     service:
       type: ClusterIP 
 
