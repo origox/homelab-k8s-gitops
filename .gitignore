@@ -2,7 +2,7 @@
 .vscode/
 
 # Unencrypted secrets
-basic-auth.yaml
+#basic-auth.yaml
 
 # not really neccessary
 pub-sealed-secrets.pem 

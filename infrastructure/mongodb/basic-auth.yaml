@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  database: bXlkYg==
+  password: a2xva2Vy
+  rootPassword: a2xva2Vy
+  username: YWRtaW4=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: basic-auth
+  namespace: mongodb
