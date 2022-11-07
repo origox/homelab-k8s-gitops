@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - service.yaml
-  - basic-auth.yaml
+  - basic-auth2.yaml
   - release.yaml
