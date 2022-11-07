@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - bitnami.yaml
+  - jetstack-charts.yaml
