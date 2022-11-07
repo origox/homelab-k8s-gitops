@@ -9,7 +9,7 @@ spec:
   type: LoadBalancer
   ports:
   - name:  mongodb
-    port:  27017
+    port:  27018
     protocol: TCP
   selector:
     app.kubernetes.io/component: mongodb
