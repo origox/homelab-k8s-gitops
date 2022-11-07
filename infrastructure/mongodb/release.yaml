@@ -23,7 +23,7 @@ spec:
     livenessProbe:
       initialDelaySeconds: 180
     auth:
-      existingSecret: basic-auth2
+      existingSecret: basic-auth
       username: user1
       password: user1
       database: mydb

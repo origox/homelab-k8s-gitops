@@ -1,0 +1,31 @@
+apiVersion: v1
+data:
+    database: ENC[AES256_GCM,data:OMRiYEN1kp8=,iv:EGXa+/AJnj0Av0Mg+3k4aYw+t6oo1PAjmddcyC3N16I=,tag:fQVXjT3WvYy44aI8R/Ejqg==,type:str]
+    mongodb-passwords: ENC[AES256_GCM,data:0rg5STP/6HM=,iv:kTXpoFkw0J+kXQekMIc76iVlB8fUhBUKJaeSeXYroTQ=,tag:UB3W0Aqy07KZAXF7hpMnNg==,type:str]
+    mongodb-root-password: ENC[AES256_GCM,data:6NOszwgQwyQ=,iv:G5ClDqg0yRr8ai4U6gJZPMXypx77GT6lPBGY5v+6G4Q=,tag:HVJxkuMmooT+kCyw0mBpaw==,type:str]
+    username: ENC[AES256_GCM,data:G383K8XGVOM=,iv:BizUsFJSvhcIg3nl3aeEnPAjgmQqwfpWRggxHQUHit8=,tag:KkxkzT5Usu8asSFRxfd68Q==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: basic-auth
+    namespace: mongodb
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1vxgckta3fudhphcjg7403u37n22tgklq0q59y7dkjg9lp9sqtyuqnk35e8
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxbUJMTWtSVEpvb25oczR0
+            WGV1VlFkbFo3eDJFNE11NzYvcWhyTGFnVmpJCmFjUjJoOG90TGh0T1FVS1ZQN205
+            S3B1TkhNU0M4K3E1SGJhZ01Hejhqd2cKLS0tIGlaZzNRVDRLVlJsdVA3L1N6dkZa
+            cnhiOHJGdkVoMUF5NU41U3VWTEROeTgKQOixXfXgJfJe0tuk1JFfYUiUS6ZBy5wg
+            dPcTo1EPcGU+xzvORj63orb8c2Iy6lZpmc6+jewS+zCPRyaPlrrV+w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-11-07T15:45:01Z"
+    mac: ENC[AES256_GCM,data:ioAvnsHo6hh47bov3isj0zxV7usvKo09w/qQTC1vLZyQpXT3l0a8E4XziU5XI/3+IBw5vM8vh6QB8uYYzEMqMAeA/OsT8/svoQBsBaO9srWh9ixlbgqBKJuDovs2qtarG6vayTslSyai1tXgiyzPoQKTYfOODKkWbMR6kkOd8UU=,iv:U4KxFDOR2UXJXhf8zHQ3COgpd74318nEaHXgHq36JwI=,tag:MBHEZLpclLoXBZIOUKZPuA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
