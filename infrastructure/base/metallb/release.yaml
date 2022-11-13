@@ -20,6 +20,7 @@ spec:
       namespaceOverride: metallb-system
     controller:
       logLevel: debug
+      webhookMode: disabled
     prometheus:
       serviceAccount: kube-prometheus-stack-prometheus
       namespace: monitoring
@@ -29,7 +30,7 @@ spec:
         enabled: false
     speaker:
       tolerateMaster: true
-      logLevel: info
+      logLevel: debug
       frr:
         enabled: false
         image:
