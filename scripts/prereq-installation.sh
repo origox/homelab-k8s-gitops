@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# AGE Encryption Setup - https://fluxcd.io/flux/guides/mozilla-sops/
+# AGE Encryption Setup 
 
-# Install AGE and gen pub/priv keys
+# Install AGE and gen pub/priv keys - https://fluxcd.io/flux/guides/mozilla-sops/
  
 # Install After cluster setup and before flux bootstrap
 
