@@ -5,3 +5,4 @@ namespace: flux-system
 resources:
   - bitnami.yaml
   - jetstack-charts.yaml
+  - metallb-charts.yaml
