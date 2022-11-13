@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: metallb-system
 resources:
   - ../../base/metallb
-#patchesStrategicMerge:
-#  - ipaddresspool-values.yaml
+patchesStrategicMerge:
+  - ipaddresspool-values.yaml
