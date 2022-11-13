@@ -5,32 +5,32 @@ metadata:
   name: metallb
   namespace: metallb-system
 spec:
+  install:
+    crds: CreateReplace
+
+  interval: 5m
   chart:
     spec:
       chart: metallb
       version: 0.13.7
-      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: metallb-charts
         namespace: flux-system
-      interval: 1m0s
+      interval: 5m
   values:
-    global:
-      namespaceOverride: metallb-system
     controller:
       logLevel: debug
-      webhookMode: disabled
     prometheus:
       serviceAccount: kube-prometheus-stack-prometheus
       namespace: monitoring
       podMonitor:
-        enabled: false
+        enabled: true
       prometheusRule:
-        enabled: false
+        enabled: true
     speaker:
       tolerateMaster: true
-      logLevel: debug
+      logLevel: info
       frr:
         enabled: false
         image:
@@ -38,4 +38,3 @@ spec:
           tag: v7.5.1
     crds:
       enabled: true
-
