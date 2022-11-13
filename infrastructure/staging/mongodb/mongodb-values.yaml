@@ -1,0 +1,14 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mongodb
+  namespace: mongodb
+spec:
+  chart:
+    spec:
+      version: 13.3.0
+  values:
+    persistence:
+      enabled: false
+  

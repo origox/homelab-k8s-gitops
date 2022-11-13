@@ -13,13 +13,10 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
-      version: 13.3.0
   interval: 1m0s
   values:
     global:
       namespaceOverride: mongodb
-    persistence:
-      enabled: false
     livenessProbe:
       initialDelaySeconds: 180
     auth:
