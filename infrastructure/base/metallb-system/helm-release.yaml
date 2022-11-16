@@ -5,9 +5,6 @@ metadata:
   name: metallb
   namespace: metallb-system
 spec:
-  install:
-    crds: CreateReplace
-
   interval: 5m
   chart:
     spec:
@@ -18,23 +15,16 @@ spec:
         name: metallb-charts
         namespace: flux-system
       interval: 5m
+  install:
+    crds: CreateReplace
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
   values:
     controller:
       logLevel: debug
-    prometheus:
-      serviceAccount: kube-prometheus-stack-prometheus
-      namespace: monitoring
-      podMonitor:
-        enabled: true
-      prometheusRule:
-        enabled: true
-    speaker:
-      tolerateMaster: true
-      logLevel: info
-      frr:
-        enabled: false
-        image:
-          repository: docker.io/frrouting/frr
-          tag: v7.5.1
     crds:
       enabled: true
