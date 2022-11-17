@@ -5,4 +5,4 @@ resources:
   - ingress.yaml
   - middleware.yaml
  # - ns-traefik-local-frandberg-live.yaml
-  - secret-dashbaord.yaml
+  - secret-dashboard.yaml
