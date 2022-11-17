@@ -7,3 +7,4 @@ resources:
   - jetstack-charts.yaml
   - metallb-charts.yaml
   - dysnix-charts.yaml
+  - traefik-charts.yaml
