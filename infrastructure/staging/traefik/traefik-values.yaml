@@ -2,18 +2,23 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: mongodb
-  namespace: mongodb
+  name: traefik
+  namespace: traefik
 spec:
   chart:
     spec:
-      version: 13.3.0
+      version: 20.2.1
   values:
-    persistence:
-      enabled: false
+    deployment:
+      replicas: 1
     globalArguments:
       - "--global.checknewversion=false"
       - "--global.sendanonymoususage=false"
     additionalArguments:
       - "--log.level=DEBUG"
-  
+    ports:
+      web:
+        redirectTo: websecure
+      websecure:
+        tls:
+          enabled: true
