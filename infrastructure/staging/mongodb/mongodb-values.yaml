@@ -11,9 +11,4 @@ spec:
   values:
     persistence:
       enabled: false
-    globalArguments:
-      - "--global.checknewversion=false"
-      - "--global.sendanonymoususage=false"
-    additionalArguments:
-      - "--log.level=DEBUG"
   
