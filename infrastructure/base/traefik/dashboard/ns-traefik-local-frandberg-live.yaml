@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ns-traefik-local-frandberg-live
+  namespace: default
+spec:
+  secretName: ns-traefik-local-frandberg-live-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "*.local.frandberg.live"
+  dnsNames:
+  - "local.frandberg.live"
+  - "*.local.frandberg.live"
