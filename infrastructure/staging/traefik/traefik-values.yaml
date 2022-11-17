@@ -22,6 +22,19 @@ spec:
       websecure:
         tls:
           enabled: true
+    ingressRoute:
+      dashboard:
+        enabled: false
+    providers:
+      kubernetesCRD:
+        enabled: true
+        ingressClass: traefik-external
+      kubernetesIngress:
+        enabled: true
+        publishedService:
+          enabled: false
+    rbac:
+      enabled: true
     service:
       enabled: true
       type: LoadBalancer
