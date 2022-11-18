@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - slack-secret.yaml
   - slack-notification.yaml
+  - on-call-webapp.yaml
