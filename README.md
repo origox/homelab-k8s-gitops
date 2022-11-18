@@ -4,7 +4,8 @@
 - Longhorn Block Storage
 - [Flux for GitOps](https://fluxcd.io/)
 - [SOPS for Secrets](https://fluxcd.io/flux/guides/mozilla-sops/)
-- [Monorepo structure](https://fluxcd.io/flux/guides/repository-structure/) 
+- [Monorepo structure](https://fluxcd.io/flux/guides/repository-structure/)
+- Slack Notifications 
 
 # Staging Environment
 ## Staging - HW
@@ -40,6 +41,7 @@ $ sudo dpkg -i ./sops_3.7.3_amd64.deb
     - Using dynix raw helm chart to wrap metallb L2 post config i.e. config should be applied after metallb is installed.
 - Ingress Controller - Traefik
     - Pre-req: Service load balacing in place i.e. Metallb
+- Slack Notification
 - MongoDB - need to revised
 
 ## Staging - Cluster APPs
