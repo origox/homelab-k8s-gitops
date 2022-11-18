@@ -8,7 +8,7 @@ spec:
   summary: "staging cluster"
   providerRef:
     name: slack
-  eventSeverity: error
+  eventSeverity: info
   eventSources:
     - kind: GitRepository
       name: '*'
