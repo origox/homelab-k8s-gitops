@@ -29,7 +29,7 @@ spec:
       - apiVersion: cert-manager.io/v1
         kind: Certificate
         metadata:
-          name: "${SECRET_CLUSTER_LOCAL_DOMAIN}"
+          name: local-live
           namespace: default
         spec:
           secretName: local-staging-tls
