@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./config/staging
+  path: ./config
   prune: true
   validation: client
   decryption:
