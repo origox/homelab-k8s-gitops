@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ../../base/cert-manager
   - issuers
+  - certificates/staging
