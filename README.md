@@ -5,7 +5,8 @@
 - [Flux for GitOps](https://fluxcd.io/)
 - [SOPS for Secrets](https://fluxcd.io/flux/guides/mozilla-sops/)
 - [Monorepo structure](https://fluxcd.io/flux/guides/repository-structure/)
-- Slack Notifications 
+- [Slack Notifications](https://fluxcd.io/flux/guides/notifications/)
+- [Flux Variable substitution](https://fluxcd.io/flux/components/kustomize/kustomization/#variable-substitution)
 
 # Staging Environment
 ## Staging - HW
@@ -39,8 +40,16 @@ $ sudo dpkg -i ./sops_3.7.3_amd64.deb
 ## Staging - Cluster Infrastructure
 - Service Load Balancer - Metallb
     - Using dynix raw helm chart to wrap metallb L2 post config i.e. config should be applied after metallb is installed.
+    - [Inspiration](https://www.youtube.com/watch?v=zNbqxPRTjFg&t=474s)
 - Ingress Controller - Traefik
     - Pre-req: Service load balacing in place i.e. Metallb
+    - [Inspiration](https://www.youtube.com/watch?v=G4CmbYL9UPg&t=907s)
+- Certificates - Let's encrypt/Cloudflare
+    - [Inspiration - repo setup](https://github.com/onedr0p/flux-cluster-template/tree/main/cluster/apps/networking/cert-manager)
+    - [Inspiration - youtube](https://www.youtube.com/watch?v=G4CmbYL9UPg&t=907s)
+    - Use ENV i.e. [variable substitution](https://fluxcd.io/flux/components/kustomize/kustomization/#variable-substitution)
+
+
 - Slack Notification
 - MongoDB - need to revised
 

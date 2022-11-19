@@ -2,25 +2,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: infrastructure
+  name: config
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: sources
   interval: 10m0s
-  timeout: 5m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/staging
+  path: ./config/staging
   prune: true
   validation: client
   decryption:
     provider: sops
     secretRef:
       name: sops-age
-  postBuild:
-    substitute: {}
-    substituteFrom:
-      - kind: Secret
-        name: cluster-secrets
