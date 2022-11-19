@@ -29,14 +29,14 @@ spec:
       - apiVersion: cert-manager.io/v1
         kind: Certificate
         metadata:
-          name: "${SECRET_CLUSTER_LOCAL_DOMAIN/./-}"
+          name: "${SECRET_CLUSTER_LOCAL_DOMAIN}"
           namespace: default
         spec:
-          secretName: "${SECRET_CLUSTER_LOCAL_DOMAIN/./-}-tls"
+          secretName: local-staging-tls
           issuerRef:
             name: letsencrypt-staging
             kind: ClusterIssuer
-          commonName: "${SECRET_CLUSTER_LOCAL_DOMAIN}"
+          commonName: "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
           dnsNames:
             - "${SECRET_CLUSTER_LOCAL_DOMAIN}"
             - "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
