@@ -35,7 +35,7 @@ spec:
             server: https://acme-staging-v02.api.letsencrypt.org/directory
             email: "${SECRET_CLOUDFLARE_EMAIL}"
             privateKeySecretRef:
-              name: cloudflare-token-secret
+              name: letsencrypt-staging
             solvers:
               - dns01:
                   cloudflare:
