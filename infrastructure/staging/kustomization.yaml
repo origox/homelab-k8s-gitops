@@ -6,4 +6,5 @@ resources:
   - metallb
   - traefik
   - cert-manager
+  - longhorn
 

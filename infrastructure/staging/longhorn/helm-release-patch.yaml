@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: longhorn
+  namespace: longhorn-system
+spec:
+  chart:
+    spec:
+      version: 1.3.2
+  values:
+    persistence:
+      defaultClass: true
+      defaultClassReplicaCount: 1
+      defaultDataLocality: disabled # best-effort otherwise
+      reclaimPolicy: Delete
