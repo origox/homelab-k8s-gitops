@@ -34,7 +34,7 @@ spec:
         spec:
           secretName: local-staging-tls
           issuerRef:
-            name: letsencrypt-staging
+            name: letsencrypt-staging3
             kind: ClusterIssuer
           commonName: "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
           dnsNames:
