@@ -40,3 +40,17 @@ spec:
           dnsNames:
             - "${SECRET_CLUSTER_LOCAL_DOMAIN}"
             - "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
+      - apiVersion: cert-manager.io/v1
+        kind: Certificate
+        metadata:
+          name: local-live-longhorn
+          namespace: longhorn-system
+        spec:
+          secretName: local-staging-tls
+          issuerRef:
+            name: letsencrypt-staging
+            kind: ClusterIssuer
+          commonName: "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
+          dnsNames:
+            - "${SECRET_CLUSTER_LOCAL_DOMAIN}"
+            - "*.${SECRET_CLUSTER_LOCAL_DOMAIN}"
