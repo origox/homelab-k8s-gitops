@@ -11,11 +11,15 @@ spec:
   routes:
     - match: Host(`www.longhorn.home.frandberg.live`)
       kind: Rule
+      middlewares:
+      - name: longhorn-dashboard-basicauth
       services:
         - name: longhorn-frontend
           port: 80
     - match: Host(`longhorn.home.frandberg.live`)
       kind: Rule
+      middlewares:
+      - name: longhorn-dashboard-basicauth
       services:
         - name: longhorn-frontend
           port: 80
