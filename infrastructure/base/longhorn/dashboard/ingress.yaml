@@ -19,6 +19,9 @@ spec:
           port: 80
     - match: Host(`longhorn.home.frandberg.live`)
       kind: Rule
+      middlewares:
+        - name: basic-auth
+          namespace: longhorn-system
       services:
         - name: longhorn-frontend
           port: 80
