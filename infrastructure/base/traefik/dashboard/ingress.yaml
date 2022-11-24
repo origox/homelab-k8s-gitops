@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.local.frandberg.live`)
+    - match: Host(`traefik.home.frandberg.live`)
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth
