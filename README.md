@@ -1,6 +1,6 @@
 # homelab-k8s-gitops
 
-- K3S Cluster
+- [K3S Cluster](docs/k8s-commands.md)
 - Longhorn Block Storage
 - [Flux for GitOps](https://fluxcd.io/)
 - [SOPS for Secrets](https://fluxcd.io/flux/guides/mozilla-sops/)
