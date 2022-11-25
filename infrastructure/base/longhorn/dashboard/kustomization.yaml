@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - basic-auth.sops.yaml
   - middleware.yaml
+  - ns-longhorn-home-frandberg-live.yaml
   - ingress.yaml
   
