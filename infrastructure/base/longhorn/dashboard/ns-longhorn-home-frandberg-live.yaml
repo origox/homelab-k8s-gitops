@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ns-longhorn-home-frandberg-live
+  namespace: longhorn-system
+spec:
+  secretName: ns-longhorn-home-frandberg-live-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: "longhorn.home.frandberg.live"
+  dnsNames:
+  - "longhorn.home.frandberg.live"
