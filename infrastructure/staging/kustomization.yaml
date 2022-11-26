@@ -7,4 +7,5 @@ resources:
   - traefik
   - cert-manager
   - longhorn
+  - monitoring
 
