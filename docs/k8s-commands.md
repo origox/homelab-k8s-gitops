@@ -1,5 +1,4 @@
 # Kubernetes commands
-
 ```bash
 # List all pods 
 kubectl get pods --all-namespaces -o wide
@@ -7,6 +6,13 @@ kubectl get pods --all-namespaces -o wide
 # List of taints per node
 kubectl get nodes -o json | jq '.items[].spec.taints'
 ```
+
+# Kubectl
+```bash
+# Merge kubectl config files
+cp ~/.kube/config ~/.kube/config.bak && KUBECONFIG=~/.kube/config:/path/to/new/config kubectl config view --flatten > /tmp/config && mv /tmp/config ~/.kube/config
+```
+
 
 # Certificates
 ```bash
