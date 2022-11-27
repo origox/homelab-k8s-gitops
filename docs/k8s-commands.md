@@ -1,10 +1,11 @@
 # Kubernetes commands
 
 ```bash
-
 # List all pods 
 kubectl get pods --all-namespaces -o wide
 
+# List of taints per node
+kubectl get nodes -o json | jq '.items[].spec.taints'
 ```
 
 # Certificates
