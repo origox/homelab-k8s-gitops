@@ -41,6 +41,7 @@ $ sudo dpkg -i ./sops_3.7.3_amd64.deb
 - Service Load Balancer - Metallb
     - Using dynix raw helm chart to wrap metallb L2 post config i.e. config should be applied after metallb is installed.
     - [Inspiration](https://www.youtube.com/watch?v=zNbqxPRTjFg&t=474s)
+    - [Inspiration - check if Metallb is working as expected](https://youtu.be/dEAtD9PVr_Q?t=477)
 - Ingress Controller - Traefik
     - Pre-req: Service load balacing in place i.e. Metallb
     - [Inspiration](https://www.youtube.com/watch?v=G4CmbYL9UPg&t=907s)
