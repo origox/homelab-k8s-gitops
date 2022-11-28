@@ -11,6 +11,7 @@ spec:
     name: flux-system
   path: ./config
   prune: true
+  wait: true
   validation: client
   decryption:
     provider: sops

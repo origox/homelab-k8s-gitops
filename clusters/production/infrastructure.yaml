@@ -14,6 +14,7 @@ spec:
     name: flux-system
   path: ./infrastructure/production
   prune: true
+  wait: true
   validation: client
   decryption:
     provider: sops
