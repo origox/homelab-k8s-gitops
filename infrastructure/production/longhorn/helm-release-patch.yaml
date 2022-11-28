@@ -16,15 +16,30 @@ spec:
       defaultDataLocality: disabled # best-effort otherwise
       reclaimPolicy: Delete
     longhornManager:
-      nodeSelector: disktype=ssd
-      tolerations: CriticalAddonsOnly=true:NoExecute
+      nodeSelector:
+        disktype: ssd
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: true
+        effect: NoExecute
     longhornUI:
-      nodeSelector: disktype=ssd
-      tolerations: CriticalAddonsOnly=true:NoExecute
+      nodeSelector:
+        disktype: ssd
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: true
+        effect: NoExecute
     longhornDriver:
-      nodeSelector: disktype=ssd
-      tolerations: CriticalAddonsOnly=true:NoExecute
+      nodeSelector:
+        disktype: ssd
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: true
+        effect: NoExecute
     defaultSettings:
-      systemManagedComponentsNodeSelector: disktype=ssd
+      systemManagedComponentsNodeSelector: disktype:ssd
       taintToleration: CriticalAddonsOnly=true:NoExecute
     
