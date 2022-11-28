@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # AGE Encryption Setup 
 
@@ -10,7 +10,7 @@
 kubectl create ns flux-system
 
 ## instert priv key to my cluster so we can decrypt sops secrets
-cat $AGE_KEY_FIlE |
+cat $AGE_KEY_FILE |
 kubectl create secret generic sops-age \
 --namespace=flux-system \
 --from-file=age.agekey=/dev/stdin
