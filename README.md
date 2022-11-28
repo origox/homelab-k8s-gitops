@@ -49,9 +49,12 @@ $ sudo dpkg -i ./sops_3.7.3_amd64.deb
     - [Inspiration - repo setup](https://github.com/onedr0p/flux-cluster-template/tree/main/cluster/apps/networking/cert-manager)
     - [Inspiration - youtube](https://www.youtube.com/watch?v=G4CmbYL9UPg&t=907s)
     - Use ENV i.e. [variable substitution](https://fluxcd.io/flux/components/kustomize/kustomization/#variable-substitution)
-
-
 - Slack Notification
+
+- Block storage - Longhorn
+
+
+
 - MongoDB - need to revised
 
 ## Staging - Cluster APPs
@@ -67,7 +70,17 @@ Intel I5 platform x 5
 
 ## Production - Cluster Setup
 Ansible manage
+
+
+
 ## Production - Cluster Infrastructure
+- Block storage - Longhorn
+```bash
+# Taint and label Storage Nodes 
+kubectl taint nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 CriticalAddonsOnly=true:NoExecute
+
+kubectl label nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 disktype=ssd
+```
 
 ## Production - Cluster APPs
 
