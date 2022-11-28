@@ -5,6 +5,9 @@ kubectl get pods --all-namespaces -o wide
 
 # List of taints per node
 kubectl get nodes -o json | jq '.items[].spec.taints'
+
+# List all pods for a specific node
+kubectl get pods --field-selector spec.nodeName=k3s-server-1 -A
 ```
 
 # Kubectl
