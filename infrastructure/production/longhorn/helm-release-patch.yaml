@@ -37,4 +37,6 @@ spec:
     defaultSettings:
       systemManagedComponentsNodeSelector: "disktype:ssd"
       taintToleration: "CriticalAddonsOnly=true:NoExecute"
+      backupTarget: s3://192..168.86.189:9000/
+      backupTargetCredentialSecret: longhorn-truenas-s3-backup-credentials
     

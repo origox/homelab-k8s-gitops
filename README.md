@@ -52,6 +52,7 @@ $ sudo dpkg -i ./sops_3.7.3_amd64.deb
 - Slack Notification
 
 - Block storage - Longhorn
+    - [Inspiration - "Just me and Opensource"](https://youtu.be/SDI9Tly5YDo?t=571)
 
 
 
@@ -76,10 +77,19 @@ Ansible manage
 ## Production - Cluster Infrastructure
 - Block storage - Longhorn
 ```bash
-# Taint and label Storage Nodes 
+# Taint Storage Nodes
 kubectl taint nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 CriticalAddonsOnly=true:NoExecute
 
+# Label Storage Nodes
 kubectl label nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 disktype=ssd
+
+# See longhorn helm-release-patch.yaml for corresponding tolerations
+
+# Make longhorn the one and only default storage class i.e. remove default from local-path
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+
+# Make a port forward to temp. access longhorn dashboard
+kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
 ```
 
 ## Production - Cluster APPs
