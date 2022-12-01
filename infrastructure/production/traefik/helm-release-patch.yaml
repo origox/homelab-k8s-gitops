@@ -8,6 +8,9 @@ spec:
   chart:
     spec:
       version: 20.2.1
+  dependsOn:
+    - name: traefik
+      namespace: traefik
   values:
     deployment:
       replicas: 3
