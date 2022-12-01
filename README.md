@@ -95,6 +95,9 @@ kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
 # Create bucket config: s3://longhorn-backup@eu-north-se1/
 ```
 
+- Ingress controller - Traefik
+
+
 ## Production - Cluster APPs
 
 # Restoration
