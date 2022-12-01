@@ -9,8 +9,8 @@ spec:
     spec:
       version: 20.2.1
   dependsOn:
-    - name: traefik
-      namespace: traefik
+    - name: longhorn
+      namespace: longhorn-system
   values:
     deployment:
       replicas: 3
