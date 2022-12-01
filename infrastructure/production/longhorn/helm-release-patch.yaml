@@ -26,14 +26,6 @@ spec:
         operator: "Equal"
         value: "true"
         effect: "NoExecute"
-    longhornDriver:
-      nodeSelector:
-        disktype: "ssd"
-      tolerations:
-      - key: "CriticalAddonsOnly"
-        operator: "Equal"
-        value: "true"
-        effect: "NoExecute"
     defaultSettings:
       systemManagedComponentsNodeSelector: "disktype:ssd"
       taintToleration: "CriticalAddonsOnly=true:NoExecute"
