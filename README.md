@@ -90,6 +90,9 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 
 # Make a port forward to temp. access longhorn dashboard
 kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
+
+# Prepare Backup - Define s3 bucket in Truenas/Minio
+# Create secret and value params
 ```
 
 ## Production - Cluster APPs
