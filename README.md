@@ -92,7 +92,7 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
 
 # Prepare Backup - Define s3 bucket in Truenas/Minio
-# Create secret and value params
+# Create bucket config: s3://longhorn-backup@eu-north-se1/
 ```
 
 ## Production - Cluster APPs
