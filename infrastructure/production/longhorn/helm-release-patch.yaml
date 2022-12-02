@@ -10,6 +10,8 @@ spec:
       chart: longhorn
       version: 1.3.2
   values:
+    persistence:
+      defaultClassReplicaCount: 3
     defaultSettings:
       backupTarget: s3://longhorn-backup@eu-north-se1/
       backupTargetCredentialSecret: longhorn-truenas-s3-backup-credentials
