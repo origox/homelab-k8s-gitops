@@ -13,7 +13,7 @@ spec:
       namespace: longhorn-system
   values:
     deployment:
-      replicas: 3
+      replicas: 2
     globalArguments:
       - "--global.checknewversion=false"
       - "--global.sendanonymoususage=false"
