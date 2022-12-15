@@ -48,3 +48,4 @@ spec:
     persistence:
       enabled: true
       name: data
+      accessMode: ReadWriteMany
