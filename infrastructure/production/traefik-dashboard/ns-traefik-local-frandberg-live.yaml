@@ -9,7 +9,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "*.local.frandberg.live"
+  commonName: "*.home.frandberg.live"
   dnsNames:
-  - "local.frandberg.live"
-  - "*.local.frandberg.live"
+  - "home.frandberg.live"
+  - "*.home.frandberg.live"
