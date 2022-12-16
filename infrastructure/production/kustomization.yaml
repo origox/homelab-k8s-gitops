@@ -5,4 +5,5 @@ resources:
    - longhorn
    - traefik
    - cert-manager
+   - traefik-dashboard
    
