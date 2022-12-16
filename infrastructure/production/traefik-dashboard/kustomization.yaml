@@ -2,7 +2,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - ns-traefik-local-frandberg-live.yaml
   - ingress.yaml
   - middleware.yaml
-  - ns-traefik-local-frandberg-live.yaml
   - secret-dashboard.yaml

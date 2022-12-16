@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: ns-traefik-local-frandberg-live
-  namespace: default
+  namespace: traefik
 spec:
   secretName: ns-traefik-local-frandberg-live-staging-tls
   issuerRef:

@@ -17,5 +17,5 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
-#  tls:
-#    secretName: ns-traefik-local-frandberg-live-staging-tls
+  tls:
+    secretName: ns-traefik-local-frandberg-live-staging-tls
