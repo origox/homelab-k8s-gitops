@@ -78,10 +78,10 @@ Ansible manage
 - Block storage - Longhorn
 ```bash
 # Taint Storage Nodes
-kubectl taint nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 CriticalAddonsOnly=true:NoExecute
+REMOVE: kubectl taint nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 CriticalAddonsOnly=true:NoExecute
 
 # Label Storage Nodes
-kubectl label nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 disktype=ssd
+REMOVE: kubectl label nodes k3s-longhorn-1 k3s-longhorn-2 k3s-longhorn-3 disktype=ssd
 
 # See longhorn helm-release-patch.yaml for corresponding tolerations
 
@@ -97,6 +97,8 @@ kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
 
 - Ingress controller - Traefik
 
+- Monitoring - Prometheus & Grafana
+[Inspiration - "TechnoTime"](https://youtu.be/fzny5uUaAeY)
 
 ## Production - Cluster APPs
 

@@ -6,4 +6,5 @@ resources:
    - traefik
    - cert-manager
    - traefik-dashboard
+   - monitoring
    
