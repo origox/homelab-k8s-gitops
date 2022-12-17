@@ -66,14 +66,15 @@ spec:
       serviceMonitor:
         enabled: true
     prometheus:
+      enabled: true
       prometheusSpec:
-        retention: 24h
-        resources:
-          requests:
-            cpu: 200m
-            memory: 200Mi
-        podMonitorNamespaceSelector: {}
-        podMonitorSelector:
-          matchLabels:
-            app.kubernetes.io/component: monitoring
+        replicas: 1
+        replicaExternalLabelName: "replica"
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorSelectorNilUsesHelmValues: false
+        podMonitorSelectorNilUsesHelmValues: false
+        probeSelectorNilUsesHelmValues: false
+        retention: 6h
+        enableAdminAPI: true
+        walCompression: true
     
