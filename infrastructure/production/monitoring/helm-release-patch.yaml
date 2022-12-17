@@ -63,8 +63,8 @@ spec:
       forceDeployDashboards: false
       defaultDashboardsEnabled: true
       defaultDashboardsTimezone: utc
-  serviceMonitor:
-    enabled: true
+      serviceMonitor:
+        enabled: true
     prometheus:
       prometheusSpec:
         retention: 24h
