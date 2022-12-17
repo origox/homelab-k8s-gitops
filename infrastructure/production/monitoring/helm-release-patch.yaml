@@ -13,8 +13,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community-charts
-      verify:
-        provider: cosign
       interval: 60m
   install:
     crds: Create
