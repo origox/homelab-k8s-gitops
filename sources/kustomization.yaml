@@ -9,5 +9,4 @@ resources:
   - dysnix-charts.yaml
   - traefik-charts.yaml
   - longhorn-charts.yaml
-  - prometheus-community.yaml
   - prometheus-community-official.yaml
