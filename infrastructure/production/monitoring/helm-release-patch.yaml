@@ -12,7 +12,7 @@ spec:
       chart: kube-prometheus-stack
       sourceRef:
         kind: HelmRepository
-        name: prometheus-community
+        name: prometheus-community-charts
       verify:
         provider: cosign
       interval: 60m
