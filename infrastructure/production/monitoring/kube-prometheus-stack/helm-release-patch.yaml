@@ -68,7 +68,7 @@ spec:
       serviceMonitor:
         enabled: true
       admin:
-      existingSecret: grafana-admin-credentials
+        existingSecret: grafana-admin-credentials
         userKey: admin-user
         passwordKey: admin-password
     prometheus:
