@@ -10,3 +10,4 @@ resources:
   - traefik-charts.yaml
   - longhorn-charts.yaml
   - prometheus-community-official.yaml
+  - grafana-charts.yaml
