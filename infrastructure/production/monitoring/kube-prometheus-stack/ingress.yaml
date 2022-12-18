@@ -1,0 +1,24 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external 
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`grafana.home.frandberg.live`)
+      kind: Rule
+      services:
+        - name: grafana
+          port: 3000
+          sticky:
+            cookie:
+              httpOnly: true
+              name: grafana
+              secure: true
+              sameSite: none
+  tls:
+    secretName: ns-traefik-local-frandberg-live-staging-tls

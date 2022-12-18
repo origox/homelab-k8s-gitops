@@ -4,5 +4,6 @@ resources:
   - namespace.yaml
   - grafana-admin.secret.sops.yaml
   - helm-release-patch.yaml
+  - ingress.yaml
 
 
