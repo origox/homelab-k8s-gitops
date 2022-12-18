@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - kube-prometheus-stack
   - monitoring-config
-  
+  - loki-stack
+
 
 
