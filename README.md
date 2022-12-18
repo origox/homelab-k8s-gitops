@@ -98,7 +98,8 @@ kubectl -n longhorn-system port-forward svc/longhorn-frontend 8080:80
 - Ingress controller - Traefik
 
 - Monitoring - Prometheus & Grafana
-[Inspiration - "TechnoTime"](https://youtu.be/fzny5uUaAeY)
+    - [Inspiration - TechnoTim](https://youtu.be/fzny5uUaAeY)
+    - [Inspiration - Flux](https://github.com/fluxcd/flux2/tree/main/manifests/monitoring)
 
 ## Production - Cluster APPs
 
