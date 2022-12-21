@@ -21,7 +21,7 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: longhorn # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: homeassist-pv2
+##  volumeName: homeassist-pv2
 # ---
 # apiVersion: v1
 # kind: Secret
