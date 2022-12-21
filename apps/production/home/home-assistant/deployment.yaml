@@ -10,7 +10,7 @@ metadata:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: homeassist-pv-claim2
+  name: homeassist-pv-claim3
   namespace: home
   labels:
     app: homeassist
