@@ -19,7 +19,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
   storageClassName: longhorn # Empty string must be explicitly set otherwise default StorageClass will be set
   volumeName: homeassist-pv
 # ---
