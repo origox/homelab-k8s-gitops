@@ -13,11 +13,11 @@ spec:
       kind: Rule
       services:
         - name: homeassist
-          port: 80
+          port: 443
     - match: Host(`home-assist.home.frandberg.live`)
       kind: Rule
       services:
         - name: homeassist
-          port: 80
+          port: 443
   tls:
     secretName: ns-longhorn-home-frandberg-live-staging-tls
