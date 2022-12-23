@@ -1,0 +1,30 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+  creationTimestamp: "2022-12-23T17:22:13Z"
+  generation: 2
+  labels:
+    kustomize.toolkit.fluxcd.io/name: apps
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: homeassist-dashboard
+  namespace: home
+  resourceVersion: "3334583"
+  uid: a0729ecb-18ac-4784-b5bc-4ff18068dc44
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`www.home-assist.home.frandberg.live`)
+    services:
+    - name: homeassist
+      port: 80
+  - kind: Rule
+    match: Host(`home-assist.home.frandberg.live`)
+    services:
+    - name: homeassist
+      port: 80
+  tls:
+    secretName: ns-longhorn-home-frandberg-live-staging-tls
