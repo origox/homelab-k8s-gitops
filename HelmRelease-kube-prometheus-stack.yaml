@@ -1,0 +1,126 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "2022-12-18T15:42:06.896008335+01:00"
+  creationTimestamp: "2022-12-18T10:35:01Z"
+  finalizers:
+  - finalizers.fluxcd.io
+  generation: 14
+  labels:
+    kustomize.toolkit.fluxcd.io/name: infrastructure
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: kube-prometheus-stack
+  namespace: monitoring
+  resourceVersion: "3190865"
+  uid: a8a2d959-b374-480d-bc1d-c2db0826b2e5
+spec:
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      interval: 60m
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community-charts
+        namespace: flux-system
+      version: 43.x
+  dependsOn:
+  - name: cert-manager-issuers
+    namespace: cert-manager
+  install:
+    crds: Create
+  interval: 5m
+  upgrade:
+    crds: CreateReplace
+  values:
+    alertmanager:
+      enabled: true
+      fullnameOverride: alertmanager
+      ingress:
+        enabled: false
+    defaultRules:
+      create: true
+      rules:
+        alertmanager: true
+        configReloaders: true
+        etcd: true
+        general: true
+        k8s: true
+        kubeApiserverAvailability: true
+        kubeApiserverBurnrate: true
+        kubeApiserverHistogram: true
+        kubeApiserverSlos: true
+        kubePrometheusGeneral: true
+        kubePrometheusNodeRecording: true
+        kubeProxy: true
+        kubeScheduler: true
+        kubeStateMetrics: true
+        kubelet: true
+        kubernetesApps: true
+        kubernetesResources: true
+        kubernetesStorage: true
+        kubernetesSystem: true
+        network: true
+        node: true
+        nodeExporterAlerting: true
+        nodeExporterRecording: true
+        prometheus: true
+        prometheusOperator: true
+    fullnameOverride: prometheus
+    grafana:
+      admin:
+        existingSecret: grafana-admin-credentials
+        passwordKey: admin-password
+        userKey: admin-user
+      defaultDashboardsEnabled: true
+      defaultDashboardsTimezone: utc
+      enabled: true
+      forceDeployDashboards: false
+      forceDeployDatasources: false
+      fullnameOverride: grafana
+      serviceMonitor:
+        enabled: true
+    prometheus:
+      enabled: true
+      prometheusSpec:
+        enableAdminAPI: true
+        podMonitorSelectorNilUsesHelmValues: false
+        probeSelectorNilUsesHelmValues: false
+        replicaExternalLabelName: replica
+        replicas: 1
+        retention: 6h
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorSelectorNilUsesHelmValues: false
+        walCompression: true
+status:
+  conditions:
+  - lastTransitionTime: "2022-12-23T14:59:20Z"
+    message: upgrade retries exhausted
+    reason: UpgradeFailed
+    status: "False"
+    type: Ready
+  - lastTransitionTime: "2022-12-23T14:59:20Z"
+    message: "Helm upgrade failed: cannot patch \"prometheus-kubernetes-system-controller-manager\"
+      with kind PrometheusRule: Internal error occurred: failed calling webhook \"prometheusrulemutate.monitoring.coreos.com\":
+      failed to call webhook: Post \"https://prometheus-operator.monitoring.svc:443/admission-prometheusrules/validate?timeout=10s\":
+      EOF\n\nLast Helm logs:\n\nPatch ServiceMonitor \"prometheus-kubelet\" in namespace
+      monitoring\nPatch ServiceMonitor \"prometheus-operator\" in namespace monitoring\nPatch
+      ServiceMonitor \"prometheus-prometheus\" in namespace monitoring\nPatch ValidatingWebhookConfiguration
+      \"prometheus-admission\" in namespace \nwarning: Upgrade \"kube-prometheus-stack\"
+      failed: cannot patch \"prometheus-kubernetes-system-controller-manager\" with
+      kind PrometheusRule: Internal error occurred: failed calling webhook \"prometheusrulemutate.monitoring.coreos.com\":
+      failed to call webhook: Post \"https://prometheus-operator.monitoring.svc:443/admission-prometheusrules/validate?timeout=10s\":
+      EOF"
+    reason: UpgradeFailed
+    status: "False"
+    type: Released
+  failures: 16
+  helmChart: flux-system/monitoring-kube-prometheus-stack
+  lastAppliedRevision: 43.1.3
+  lastAttemptedRevision: 43.1.4
+  lastAttemptedValuesChecksum: 3cfd8f2302d2011b2d3d8718aafa48d7d82632f9
+  lastHandledReconcileAt: "2022-12-18T15:42:06.896008335+01:00"
+  lastReleaseRevision: 20
+  observedGeneration: 14
+  upgradeFailures: 1
