@@ -19,5 +19,5 @@ spec:
       services:
         - name: homeassist
           port: 80
-  tls:
-    secretName: ns-longhorn-home-frandberg-live-staging-tls
+  # tls:
+  #   secretName: ns-longhorn-home-frandberg-live-staging-tls
