@@ -40,7 +40,6 @@ data:
     log_dest file /mosquitto/log/mosquitto.log
     listener 1883
     listener 9001
-    protocol websockets
     allow_anonymous true
     
 
