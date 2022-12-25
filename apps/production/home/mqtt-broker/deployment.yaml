@@ -1,16 +1,9 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: mqtt
-  labels:
-    name: mqtt
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mosquitto-log-storage-claim
-  namespace: mqtt
+  namespace: home
 spec:
   accessModes:
     - ReadWriteOnce
@@ -22,7 +15,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mosquitto-data-storage-claim
-  namespace: mqtt
+  namespace: home
 spec:
   accessModes:
     - ReadWriteOnce
@@ -38,7 +31,7 @@ metadata:
     app: mosquitto-server
     protocol: mqtt
   name: mosquitto-conf
-  namespace: mqtt
+  namespace: home
 data:
   mosquitto.conf: |-
     persistence true
@@ -54,7 +47,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mosquitto-deployment
-  namespace: mqtt
+  namespace: home
 spec:
   replicas: 1
   selector:
@@ -101,7 +94,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mosquitto-service
-  namespace: mqtt
+  namespace: home
 spec:
   selector:
     app: mosquitto-server
