@@ -21,15 +21,16 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: longhorn # Empty string must be explicitly set otherwise default StorageClass will be set
-##  volumeName: homeassist-pv2
-# ---
-# apiVersion: v1
-# kind: Secret
-# metadata:
-#   name: homeassist-config
-# type: Opaque
-# data:
-#   configuration.yaml: PASTE_BASE64_CONFIG_HERE
+#  volumeName: homeassist-pv2
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: homeassist-config
+type: Opaque
+data:
+  configuration.yaml: aG9tZWFzc2lzdGFudDoKICAjIE5hbWUgb2YgdGhlIGxvY2F0aW9uIHdoZXJlIEhvbWUgQXNzaXN0YW50IGlzIHJ1bm5pbmcKICBuYW1lOiBIb21lCiAgIyBMb2NhdGlvbiByZXF1aXJlZCB0byBjYWxjdWxhdGUgdGhlIHRpbWUgdGhlIHN1biByaXNlcyBhbmQgc2V0cwogIGxhdGl0dWRlOiAwCiAgbG9uZ2l0dWRlOiAwCiAgIyBJbXBhY3RzIHdlYXRoZXIvc3VucmlzZSBkYXRhIChhbHRpdHVkZSBhYm92ZSBzZWEgbGV2ZWwgaW4gbWV0ZXJzKQogIGVsZXZhdGlvbjogMAogICMgbWV0cmljIGZvciBNZXRyaWMsIGltcGVyaWFsIGZvciBJbXBlcmlhbAogIHVuaXRfc3lzdGVtOiBtZXRyaWMKICAjIFBpY2sgeW91cnMgZnJvbSBoZXJlOiBodHRwOi8vZW4ud2lraXBlZGlhLm9yZy93aWtpL0xpc3Rfb2ZfdHpfZGF0YWJhc2VfdGltZV96b25lcwogIHRpbWVfem9uZTogU3dlZGVuL1N0b2NraG9sbQoKICBhdXRoX3Byb3ZpZGVyczoKICAgIC0gdHlwZTogaG9tZWFzc2lzdGFudAoKZGVmYXVsdF9jb25maWc6CgpodHRwOgogIGlwX2Jhbl9lbmFibGVkOiBmYWxzZQogIGxvZ2luX2F0dGVtcHRzX3RocmVzaG9sZDogMTAKICB1c2VfeF9mb3J3YXJkZWRfZm9yOiB0cnVlCiAgdHJ1c3RlZF9wcm94aWVzOgogICAgLSAxMC40My4wLjAvMTYKICAgIC0gMTkyLjE2OC44Ni4wLzI0
 
 ---
 apiVersion: apps/v1
@@ -57,14 +58,14 @@ spec:
           volumeMounts:
             - mountPath: "/config"
               name: homeassist-persistent-storage
-            # - mountPath: "/config/configuration.yaml"
-            #   subPath: "configuration.yaml"
-            #   name: homeassist-config
+            - mountPath: "/config/configuration.yaml"
+              subPath: "configuration.yaml"
+              name: homeassist-config
       volumes:
-        # - name: homeassist-config
-        #   secret:
-        #     secretName: homeassist-config
-        #     defaultMode: 0777
+        - name: homeassist-config
+          secret:
+            secretName: homeassist-config 
+            defaultMode: 0777
         - name: homeassist-persistent-storage
           persistentVolumeClaim:
             claimName: homeassist-pv-claim3
