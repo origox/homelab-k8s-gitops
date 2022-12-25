@@ -19,6 +19,8 @@ spec:
       - "--global.sendanonymoususage=false"
     additionalArguments:
       - "--log.level=DEBUG"
+      - "--entryPoints.web.proxyProtocol.insecure"
+      - "--entryPoints.web.forwardedHeaders.insecure"
     ports:
       web:
         redirectTo: websecure
