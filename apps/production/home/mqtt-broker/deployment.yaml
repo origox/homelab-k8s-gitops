@@ -1,0 +1,114 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mqtt
+  labels:
+    name: mqtt
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mosquitto-log-storage-claim
+  namespace: mqtt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 25Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mosquitto-data-storage-claim
+  namespace: mqtt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: mosquitto-server
+    protocol: mqtt
+  name: mosquitto-conf
+  namespace: mqtt
+data:
+  mosquitto.conf: |-
+    persistence true
+    persistence_location /mosquitto/data/
+    autosave_interval 60
+    log_dest file /mosquitto/log/mosquitto.log
+    listener 1883
+    listener 9001
+    protocol websockets
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto-deployment
+  namespace: mqtt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosquitto-server
+  template:
+    metadata:
+      labels:
+        app: mosquitto-server
+    spec:
+      containers:
+        - name: mosquitto
+          image: eclipse-mosquitto
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: '0.5'
+              memory: 500Mi
+          ports:
+            - containerPort: 9001
+            - containerPort: 1883
+          volumeMounts:
+            - name: mosquitto-conf
+              mountPath: /mosquitto/config
+            - name: mosquitto-data
+              mountPath: /mosquitto/data
+            - name: mosquitto-log
+              mountPath: /mosquitto/log
+      volumes:
+        - name: mosquitto-conf
+          configMap:
+            name: mosquitto-conf
+            items:
+            - path: "mosquitto.conf"
+              key: mosquitto.conf
+        - name: mosquitto-data
+          persistentVolumeClaim:
+              claimName: mosquitto-data-storage-claim
+        - name: mosquitto-log
+          persistentVolumeClaim:
+              claimName: mosquitto-log-storage-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mosquitto-service
+  namespace: mqtt
+spec:
+  selector:
+    app: mosquitto-server
+  type: LoadBalancer
+  ports:
+    - name: mosquitto
+      port: 1883
+    - name: mosquitto-web
+      port: 9001
+      targetPort: 9001
