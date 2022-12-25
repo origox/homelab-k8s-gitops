@@ -10,7 +10,7 @@ metadata:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: homeassist-pv-claim3
+  name: homeassist-pv-claim
   namespace: home
   labels:
     app: homeassist
@@ -68,7 +68,7 @@ spec:
             defaultMode: 0777
         - name: homeassist-persistent-storage
           persistentVolumeClaim:
-            claimName: homeassist-pv-claim3
+            claimName: homeassist-pv-claim
 ---
 apiVersion: v1
 kind: Service
