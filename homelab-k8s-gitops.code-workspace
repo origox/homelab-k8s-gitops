@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../k3s-ansible"
+		}
+	],
+	"settings": {}
+}
