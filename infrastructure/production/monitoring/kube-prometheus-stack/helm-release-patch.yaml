@@ -11,7 +11,7 @@ spec:
       namespace: cert-manager
   chart:
     spec:
-      version: 43.x
+      version: 44.x
       chart: kube-prometheus-stack
       sourceRef:
         kind: HelmRepository
